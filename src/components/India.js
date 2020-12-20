@@ -3,7 +3,6 @@ import Lottie from 'react-lottie';
 import animationData from './Assets/IndianFlag.json';
 import loadingAnimation from './Assets/loading.json';
 import { Link } from 'react-router-dom';
-import Loading from './Assets/loading-gear.gif';
 
 function India() {
     const defaultOptions = {
@@ -68,10 +67,10 @@ function India() {
     return (
         <div>
             {covidData == null ? <><Lottie
-                            options={defaultOptions01}
-                            height={200}
-                            width={200}
-                        /></> :
+                options={defaultOptions01}
+                height={200}
+                width={200}
+            /></> :
                 <div>
                     <p>{`Last Updated: ${month[currentDateInfo.getMonth() + 1]} ${currentDateInfo.getDate()}, ${currentDateInfo.getFullYear()}`}</p>
                     <div className='casesInformation'>

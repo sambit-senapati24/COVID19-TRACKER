@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Lottie from 'react-lottie';
-import Loading from './Assets/loading-gear.gif';
 import animationData from './Assets/loading.json';
 import { FaSortAmountUpAlt, FaSortAmountDown } from 'react-icons/fa';
 function IndianState() {
+
     const [covidData, setCovidData] = useState(null);
     //api call
     let getData = async () => {
@@ -66,76 +66,103 @@ function IndianState() {
     return (
         <div>
             {covidData == null ? <><Lottie
-                            options={defaultOptions}
-                            height={200}
-                            width={200}
-                        /></> :
+                options={defaultOptions}
+                height={200}
+                width={200}
+            /></> :
                 <table>
                     <tr style={thead}>
                         <td className='serial'>#</td>
-                        <td><h3>State <br /> <span style = {sortUp}><FaSortAmountUpAlt onClick={() => {
-                            const sortedArray = covidData.concat().sort((a, b) => {
-                                return a.state < b.state ? -1 : 1;
-                            });
-                            setCovidData(sortedArray)
-                        }} />
-                        </span>
-                        <span style={sortDown}>
-                            <FaSortAmountDown onClick={() => {
-                                const sortedArray = covidData.concat().sort((a, b) => {
-                                    return a.state > b.state ? -1 : 1;
-                                });
-                                setCovidData(sortedArray)
-                            }} /></span></h3></td>
-                        <td><h3>Total<br /> Confirmed<br /> Cases <br /><span style = {sortUp}><FaSortAmountUpAlt onClick={() => {
-                            const sortedArray = covidData.concat().sort((a, b) => {
-                                return a.confirmed < b.confirmed ? -1 : 1;
-                            });
-                            setCovidData(sortedArray)
-                        }} /></span>
-                            <span style = {sortDown}>
-                            <FaSortAmountDown onClick={() => {
-                                const sortedArray = covidData.concat().sort((a, b) => {
-                                    return a.confirmed > b.confirmed ? -1 : 1;
-                                });
-                                setCovidData(sortedArray)
-                            }} /></span></h3></td>
-                        <td><h3>Active<br /> Cases<br /><span style = {sortUp}><FaSortAmountUpAlt onClick={() => {
-                            const sortedArray = covidData.concat().sort((a, b) => {
-                                return a.active < b.active ? -1 : 1;
-                            });
-                            setCovidData(sortedArray)
-                        }} /></span><span style = {sortDown}>
-                            <FaSortAmountDown onClick={() => {
-                                const sortedArray = covidData.concat().sort((a, b) => {
-                                    return a.active > b.active ? -1 : 1;
-                                });
-                                setCovidData(sortedArray)
-                            }} /></span></h3></td>
-                        <td><h3>Total<br /> Deaths<br /><span style = {sortUp}><FaSortAmountUpAlt onClick={() => {
-                            const sortedArray = covidData.concat().sort((a, b) => {
-                                return a.deaths < b.deaths ? -1 : 1;
-                            });
-                            setCovidData(sortedArray)
-                        }} /></span><span style = {sortDown}>
-                            <FaSortAmountDown onClick={() => {
-                                const sortedArray = covidData.concat().sort((a, b) => {
-                                    return a.deaths > b.deaths ? -1 : 1;
-                                });
-                                setCovidData(sortedArray)
-                            }} /></span></h3></td>
-                        <td><h3>Total<br /> Recovered<br /><span style = {sortUp}><FaSortAmountUpAlt onClick={() => {
-                            const sortedArray = covidData.concat().sort((a, b) => {
-                                return a.recovered < b.recovered ? -1 : 1;
-                            });
-                            setCovidData(sortedArray)
-                        }} /></span><span style = {sortDown}>
-                            <FaSortAmountDown onClick={() => {
-                                const sortedArray = covidData.concat().sort((a, b) => {
-                                    return a.recovered > b.recovered ? -1 : 1;
-                                });
-                                setCovidData(sortedArray)
-                            }} /></span></h3></td>
+                        <td><h3>State <br />
+                            <span style={sortUp}>
+                                <FaSortAmountUpAlt onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.state < b.state ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                            <span style={sortDown}>
+                                <FaSortAmountDown onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.state > b.state ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                        </h3></td>
+                        <td><h3>Total<br /> Confirmed<br /> Cases <br />
+                            <span style={sortUp}>
+                                <FaSortAmountUpAlt onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.confirmed < b.confirmed ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                            <span style={sortDown}>
+                                <FaSortAmountDown onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.confirmed > b.confirmed ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                        </h3></td>
+                        <td><h3>Active<br /> Cases<br />
+                            <span style={sortUp}>
+                                <FaSortAmountUpAlt onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.active < b.active ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                            <span style={sortDown}>
+                                <FaSortAmountDown onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.active > b.active ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                        </h3></td>
+                        <td><h3>Total<br /> Deaths<br />
+                            <span style={sortUp}>
+                                <FaSortAmountUpAlt onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.deaths < b.deaths ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                            <span style={sortDown}>
+                                <FaSortAmountDown onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.deaths > b.deaths ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                        </h3></td>
+                        <td><h3>Total<br /> Recovered<br />
+                            <span style={sortUp}>
+                                <FaSortAmountUpAlt onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.recovered < b.recovered ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                            <span style={sortDown}>
+                                <FaSortAmountDown onClick={() => {
+                                    const sortedArray = covidData.concat().sort((a, b) => {
+                                        return a.recovered > b.recovered ? -1 : 1;
+                                    });
+                                    setCovidData(sortedArray)
+                                }} />
+                            </span>
+                        </h3></td>
                     </tr>
                     {covidData.map((ele) => {
                         return (<tr>

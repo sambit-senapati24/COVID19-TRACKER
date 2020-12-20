@@ -48,27 +48,27 @@ function Symptoms() {
 
     return (
         <div>
-            <div className = 'lottie'>
-            <Lottie
-                options={defaultOptions}
-                height={200}
-                width={200}
-            />
-            <Lottie
-                options={defaultOptions01}
-                height={200}
-                width={200}
-            />
-            <Lottie
-                options={defaultOptions02}
-                height={200}
-                width={200}
-            />
-            <Lottie
-                options={defaultOptions03}
-                height={200}
-                width={200}
-            />
+            <div className='lottie'>
+                <Lottie
+                    options={defaultOptions}
+                    height={200}
+                    width={200}
+                />
+                <Lottie
+                    options={defaultOptions01}
+                    height={200}
+                    width={200}
+                />
+                <Lottie
+                    options={defaultOptions02}
+                    height={200}
+                    width={200}
+                />
+                <Lottie
+                    options={defaultOptions03}
+                    height={200}
+                    width={200}
+                />
             </div>
             <p style={style}>People with COVID-19 have had a wide range of symptoms reported – ranging from mild symptoms to severe illness. These symptoms may appear 2-14 days after exposure to the virus:</p>
             <li>Fever or Chills</li>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import animationData from './Assets/coronavirus.json';
 
@@ -52,7 +52,7 @@ function Home() {
         color: '#ADFF2F',
     };
     let linkInlineStyle = {
-        color : 'inherit',
+        color: 'inherit',
     };
 
     return (
@@ -67,7 +67,7 @@ function Home() {
                     height={320}
                     width={400}
                 />
-                <Link style = {linkInlineStyle} to = '/symptoms'><h4>Symptoms</h4></Link>
+                <Link style={linkInlineStyle} to='/symptoms'><h4>Symptoms</h4></Link>
                 <h1>Coronavirus Cases : </h1>
                 <h1 style={casesInlineStyle}>{covidData ? covidData.active : null}</h1>
                 <h1>Deaths : </h1>
