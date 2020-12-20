@@ -7,8 +7,9 @@ function WorldTracker() {
     const [covidData, setCovidData] = useState(null);
     //api call
     let getData = async () => {
-        let data = await fetch('https://corona.lmao.ninja/v2/countries?yesterday&sort');
+        let data = await fetch('https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja/v2/countries?yesterday&sort');
         let jsonData = await data.json()
+        console.log(jsonData)
         setCovidData(jsonData);
     };
     let count = 0;

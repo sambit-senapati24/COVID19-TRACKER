@@ -32,7 +32,7 @@ function Home() {
 
     useEffect(() => {
         getData();
-    });
+    }, []);
 
     //Api call
     let getData = async () => {
