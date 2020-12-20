@@ -31,17 +31,14 @@ function Home() {
     const [covidData, setCovidData] = useState(null);
 
     useEffect(() => {
-        console.log('Sam')
         getData();
     });
 
     //Api call
     let getData = async () => {
-        console.log('hi')
-        let data = await fetch('https://corona.lmao.ninja/v2/all?yesterday');
+        let data = await fetch('https://corona.lmao.ninja/v2/all?yesterday')
         let jsonData = await data.json()
-        console.log(jsonData)
-        setCovidData(jsonData);
+        setCovidData(jsonData)
     };
 
     let casesInlineStyle = {
@@ -63,7 +60,7 @@ function Home() {
             <div className='heading'>
                 <h3>COVID-19 NOVEL CORONAVIRUS PANDEMIC INFO</h3>
             </div>
-            <p>{`Last Updated: ${month[currentDateInfo.getMonth() + 1]} ${currentDateInfo.getDate()}, ${currentDateInfo.getFullYear()} Time: ${currentDateInfo.getHours()}:${currentDateInfo.getMinutes()}:${currentDateInfo.getSeconds()}`}</p>
+            <p>{`Last Updated: ${month[currentDateInfo.getMonth() + 1]} ${currentDateInfo.getDate()}, ${currentDateInfo.getFullYear()}`}</p>
             <div className='casesInformation'>
                 <Lottie
                     options={defaultOptions}

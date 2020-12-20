@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Lottie from 'react-lottie';
 import animationData from './Assets/IndianFlag.json';
+import loadingAnimation from './Assets/loading.json';
 import { Link } from 'react-router-dom';
 import Loading from './Assets/loading-gear.gif';
-import IndianFlagLogo from './Assets/Daco_4755198.png';
+
 function India() {
     const defaultOptions = {
         loop: true,
         autoplay: true,
         animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+    const defaultOptions01 = {
+        loop: true,
+        autoplay: true,
+        animationData: loadingAnimation,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
         }
@@ -58,9 +67,13 @@ function India() {
 
     return (
         <div>
-            {covidData == null ? <><img src={Loading} alt='Loading Gear' /><span>Loading...</span></> :
+            {covidData == null ? <><Lottie
+                            options={defaultOptions01}
+                            height={200}
+                            width={200}
+                        /></> :
                 <div>
-                    <p>{`Last Updated: ${month[currentDateInfo.getMonth() + 1]} ${currentDateInfo.getDate()}, ${currentDateInfo.getFullYear()} Time: ${currentDateInfo.getHours()}:${currentDateInfo.getMinutes()}:${currentDateInfo.getSeconds()}`}</p>
+                    <p>{`Last Updated: ${month[currentDateInfo.getMonth() + 1]} ${currentDateInfo.getDate()}, ${currentDateInfo.getFullYear()}`}</p>
                     <div className='casesInformation'>
                         <h1><Lottie
                             options={defaultOptions}
