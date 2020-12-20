@@ -50,9 +50,6 @@ function IndianState() {
     let thead = {
         backgroundColor: '#e3dac9',
     }
-    let sortIcon = {
-        marginLeft: '0px',
-    }
 
     let sortUp = {
         color: 'black',
@@ -71,7 +68,7 @@ function IndianState() {
                 width={200}
             /></> :
                 <table>
-                    <tr style={thead}>
+                    <tr style={thead}>  
                         <td className='serial'>#</td>
                         <td><h3>State <br />
                             <span style={sortUp}>

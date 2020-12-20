@@ -18,10 +18,6 @@ function WorldTracker() {
         getData();
     }, []);
     //inline styles
-    let inlineStyle = {
-        textDecoration: 'none',
-        color: 'inherit'
-    };
     let country = {
         fontWeight: 'bold',
     };
