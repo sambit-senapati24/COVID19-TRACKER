@@ -80,7 +80,7 @@ function India() {
                             width={200}
                         />India</h1>
                         <h1>Coronavirus Cases : </h1>
-                        <h1 style={casesInlineStyle}>{covidData ? covidData.active : null}</h1>
+                        <h1 style={casesInlineStyle}>{covidData ? covidData.cases : null}</h1>
                         <h1>Deaths : </h1>
                         <h1 style={deathInlineStyle}>{covidData ? covidData.deaths : null}</h1>
                         <h1>Recovered :</h1>
