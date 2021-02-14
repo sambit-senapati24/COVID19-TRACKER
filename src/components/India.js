@@ -86,7 +86,7 @@ function India() {
                         <h1>Recovered :</h1>
                         <h1 style={recoveredInlineStyle}  >{covidData ? covidData.recovered : null}</h1>
                         <Link to='india/states' style={inlineStyle}>
-                            <p>View by states</p>
+                            <p>View by states and union territories</p>
                         </Link>
                     </div>
                 </div>

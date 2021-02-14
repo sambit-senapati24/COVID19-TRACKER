@@ -7,9 +7,9 @@ function IndianState() {
     const [covidData, setCovidData] = useState(null);
     //api call
     let getData = async () => {
-        let data = await fetch('https://api.covidindiatracker.com/state_data.json');
+        let data = await fetch('https://api.covid19india.org/data.json');
         let jsonData = await data.json()
-        setCovidData(jsonData);
+        setCovidData(jsonData.statewise);
     };
     //Lotte Animation
     const defaultOptions = {
@@ -44,7 +44,7 @@ function IndianState() {
         fontWeight: 'bold',
     };
     let recovered = {
-        color: '#ADFF2F',
+        color: '#006400',
         fontWeight: 'bold',
     };
     let thead = {
@@ -162,7 +162,12 @@ function IndianState() {
                         </h3></td>
                     </tr>
                     {covidData.map((ele) => {
-                        return (<tr>
+                        return (
+                            (ele.state === "Total" || ele.state === "State Unassigned")
+                            ?
+                            <></>
+                            :
+                            <tr>
                             {console.log(covidData)}
                             <td className='serial'>{++count}</td>
                             <td id={`${count}`} style={state}>{ele.state}</td>

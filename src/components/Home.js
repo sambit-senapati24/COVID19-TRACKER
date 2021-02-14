@@ -49,7 +49,7 @@ function Home() {
         color: '#ff0000'
     };
     let recoveredInlineStyle = {
-        color: '#ADFF2F',
+        color: '#006400',
     };
     let linkInlineStyle = {
         color: 'inherit',
